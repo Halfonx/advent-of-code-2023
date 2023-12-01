@@ -1006,8 +1006,8 @@ let lastDigit = null;
 let result = null;
 let number = 0;
 
-for (let i = 0; i <= splittedSample.length - 1; i++) {
-    for (let j = 0; j <= splittedSample[i].length - 1; j++) {
+for (let i = 0; i <= splittedSample.length - 1; i++) { // Loop to iterate through the sample line
+    for (let j = 0; j <= splittedSample[i].length - 1; j++) { // Loop to iterate through the character from each line
         if (digitRegex.test(splittedSample[i][j])) {
             if (firstDigit == null && lastDigit == null) {
                 firstDigit = splittedSample[i][j];
@@ -1021,8 +1021,8 @@ for (let i = 0; i <= splittedSample.length - 1; i++) {
         number = parseInt(number);
     }
     result += number;
-    number = 0;
-    firstDigit = null;
-    lastDigit = null;
+    number = 0; // Reseting number value at the end of each line
+    firstDigit = null; // Reseting digits value at the end of each line
+    lastDigit = null; // Reseting digits value at the end of each line
 }
 console.log(result);
